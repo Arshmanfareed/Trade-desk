@@ -24,14 +24,10 @@ use App\Http\Middleware\CorsMiddleware;
 Route::get('queries', [ApiController::class,'contact_queries_api']);
 Route::get('users', [ApiController::class,'all_users']);
 
-// routes/api.php or routes/web.php
-
 Route::middleware([CorsMiddleware::class])->group(function () {
     Route::post('send-data', [ApiController::class,'receiveData']);
     Route::post('user-login', [LoginController::class,'Userlogin']);
     Route::get('resource', [ApiController::class, 'api_data']);
-
-    // Add more routes as needed
 });
 
 
